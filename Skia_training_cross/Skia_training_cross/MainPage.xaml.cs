@@ -31,7 +31,7 @@ namespace Skia_training_cross
         private SKPaint whiteFillPaint = new SKPaint
         {
             Style = SKPaintStyle.Fill,
-            Color = SKColor.Parse("c2d9ff")
+            Color = SKColors.White
         };
 
         private SKPaint brownFillPaint = new SKPaint
@@ -60,7 +60,7 @@ namespace Skia_training_cross
             Style = SKPaintStyle.Fill
         };
 
-        private SKPath pandaEarPath = new SKPath();
+        private SKPath pandaNosePath = new SKPath();
         private SKPath pandaEyePath = new SKPath();
         private SKPath pandaPupilPath = new SKPath();
         private SKPath pandaTailPath = new SKPath();
@@ -75,11 +75,11 @@ namespace Skia_training_cross
         {
             InitializeComponent();
             
-            // Make panda ear path
-            pandaEarPath.MoveTo(0,0);
-            pandaEarPath.LineTo(0,75);
-            pandaEarPath.LineTo(100,75);
-            pandaEarPath.Close();
+            // Make panda nose path
+            pandaNosePath.MoveTo(0,0);
+            pandaNosePath.LineTo(0,5);
+            pandaNosePath.LineTo(5,5);
+            pandaNosePath.Close();
             
             // Make panda eye path
             pandaEyePath.MoveTo(0,0);
@@ -89,8 +89,6 @@ namespace Skia_training_cross
             
             // Make panda pupil path
             pandaPupilPath.MoveTo(25,-5);
-            pandaPupilPath.ArcTo(6,6,0,SKPathArcSize.Small, SKPathDirection.Clockwise, 25,5);
-            pandaPupilPath.ArcTo(6,6,0,SKPathArcSize.Small, SKPathDirection.Clockwise, 25,-5);
             pandaPupilPath.Close();
             
             // Make panda tail path
@@ -99,7 +97,7 @@ namespace Skia_training_cross
             
             // Create shader
             Assembly assembly = GetType().GetTypeInfo().Assembly;
-            using (Stream stream = assembly.GetManifestResourceStream("Skia_training_cross.background.jpg"))
+            using (Stream stream = assembly.GetManifestResourceStream("Skia_training_cross.bamboo_background.jpg"))
             using (SKManagedStream skStream = new SKManagedStream(stream))
             using (SKBitmap bitmap = SKBitmap.Decode(skStream))
             using (SKShader shader = SKShader.CreateBitmap(bitmap,SKShaderTileMode.Mirror,SKShaderTileMode.Mirror))
@@ -132,9 +130,13 @@ namespace Skia_training_cross
             DateTime dateTime = DateTime.Now;
             
             // Head 
-            canvas.DrawCircle(0,-160,75,blackFillPaint);
+            canvas.DrawCircle(0, -160, 78,blackFillPaint);
+            canvas.DrawCircle(0,-160,75,whiteFillPaint);
             
-            // Draw ears and eyes
+            // Draw nose
+            //canvas.Draw(0,-160, blackFillPaint);
+            
+            // Draw nose, ears and eyes
             for (int i = 0; i < 2; i++)
             {
                 canvas.Save();
@@ -142,13 +144,13 @@ namespace Skia_training_cross
 
                 canvas.Save();
                 canvas.Translate(-65,-255);
-                canvas.DrawPath(pandaEarPath, blackFillPaint);
+                canvas.DrawPath(pandaNosePath, blackFillPaint);
                 canvas.Restore();
 
                 canvas.Save();
-                canvas.Translate(10,-170);
-                canvas.DrawPath(pandaEyePath, brownFillPaint);
-                canvas.DrawPath(pandaPupilPath, blackFillPaint);
+                canvas.DrawCircle(25, -175, 25, blackFillPaint);
+                canvas.DrawCircle(25,-175, 11,whiteFillPaint);
+                canvas.DrawCircle(25, -175, 7, blackFillPaint);
                 canvas.Restore();
                 
                 // Draw whiskers
@@ -172,13 +174,13 @@ namespace Skia_training_cross
             // Draw tail
             canvas.DrawPath(pandaTailPath, blackStrokePaint);
             
-            // Clock.background
-            canvas.DrawCircle(0,0,100,blackFillPaint);
+            // Clock background
+            canvas.DrawCircle(0,0,100,whiteFillPaint);
             
             // Hour and minute marks
             for (int angle = 0; angle < 360; angle += 6)
             {
-                canvas.DrawCircle(0, -90, angle % 30 == 0 ? 4 : 2, whiteFillPaint);
+                canvas.DrawCircle(0, -90, angle % 30 == 0 ? 4 : 2, blackFillPaint);
                 canvas.RotateDegrees(6);
             }
 
