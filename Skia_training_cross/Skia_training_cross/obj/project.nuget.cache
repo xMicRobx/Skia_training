@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "dgSpecHash": "GZll9nUQ8roMenmOaIvnYRm7xxQRBzoMPyxHB1OQ1w1riOmtihiVlKZ5ekiVSR49oHASCdWUHMaK0yJqWKR1eA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp\\2.80.3-preview.93\\skiasharp.2.80.3-preview.93.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp.views\\2.80.3-preview.93\\skiasharp.views.2.80.3-preview.93.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp.views.forms\\2.80.3-preview.93\\skiasharp.views.forms.2.80.3-preview.93.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'SkiaSharp.Views 2.80.3-preview.93' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "SkiaSharp.Views",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
+}

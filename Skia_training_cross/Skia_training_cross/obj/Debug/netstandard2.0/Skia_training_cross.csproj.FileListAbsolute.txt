@@ -1,0 +1,12 @@
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\bin\Debug\netstandard2.0\Skia_training_cross.deps.json
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\bin\Debug\netstandard2.0\Skia_training_cross.dll
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\bin\Debug\netstandard2.0\Skia_training_cross.pdb
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.csprojAssemblyReference.cache
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.AssemblyInfoInputs.cache
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.AssemblyInfo.cs
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.csproj.CoreCompileInputs.cache
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.dll
+C:\Users\TrainingP7\RiderProjects\Skia_training_cross\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\Skia_training_cross.pdb
