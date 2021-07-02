@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GZll9nUQ8roMenmOaIvnYRm7xxQRBzoMPyxHB1OQ1w1riOmtihiVlKZ5ekiVSR49oHASCdWUHMaK0yJqWKR1eA==",
+  "dgSpecHash": "Hai5VMqFuuh87yyqb2M2v0SV13AzpoK/yxus1VpJVj/OicsMedsP7L+3SUYTGo+SUUz4N1TClpdOH2Dvbq1Rew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+  "projectFilePath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TrainingP7\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

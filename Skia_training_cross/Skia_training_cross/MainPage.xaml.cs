@@ -63,7 +63,6 @@ namespace Skia_training_cross
         private SKPath pandaEarPath = new SKPath();
         private SKPath pandaEyePath = new SKPath();
         private SKPath pandaPupilPath = new SKPath();
-        
         private SKPath pandaTailPath = new SKPath();
 
         private SKPath hourHandPath =
@@ -94,7 +93,7 @@ namespace Skia_training_cross
             pandaPupilPath.ArcTo(6,6,0,SKPathArcSize.Small, SKPathDirection.Clockwise, 25,-5);
             pandaPupilPath.Close();
             
-            //Make panda tail path
+            // Make panda tail path
             pandaTailPath.MoveTo(0,100);
             pandaTailPath.CubicTo(50,200,0,250,-50,200);
             

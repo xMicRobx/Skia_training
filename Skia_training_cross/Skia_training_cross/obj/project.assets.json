@@ -781,11 +781,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+      "projectUniqueName": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
       "projectName": "Skia_training_cross",
-      "projectPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+      "projectPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
       "packagesPath": "C:\\Users\\TrainingP7\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\obj\\",
+      "outputPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\TrainingP7\\AppData\\Roaming\\NuGet\\NuGet.Config"

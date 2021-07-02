@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj": {}
+    "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj": {
+    "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj",
+        "projectUniqueName": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj",
         "projectName": "Skia_training_cross.Android",
-        "projectPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj",
+        "projectPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj",
         "packagesPath": "C:\\Users\\TrainingP7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.Android\\obj\\",
+        "outputPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -26,8 +26,8 @@
         "frameworks": {
           "monoandroid11.0": {
             "projectReferences": {
-              "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj": {
-                "projectPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj"
+              "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj": {
+                "projectPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj"
               }
             }
           }
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj": {
+    "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+        "projectUniqueName": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
         "projectName": "Skia_training_cross",
-        "projectPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
+        "projectPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
         "packagesPath": "C:\\Users\\TrainingP7\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TrainingP7\\RiderProjects\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross\\obj\\",
+        "outputPath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\TrainingP7\\AppData\\Roaming\\NuGet\\NuGet.Config"
