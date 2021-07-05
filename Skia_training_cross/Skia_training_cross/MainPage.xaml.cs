@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using SkiaSharp;
 using SkiaSharp.Views.Forms;
+using Xamarin.Forms.Shapes;
 
 namespace Skia_training_cross
 {
@@ -61,40 +62,26 @@ namespace Skia_training_cross
         };
 
         private SKPath pandaNosePath = new SKPath();
-        private SKPath pandaEyePath = new SKPath();
-        private SKPath pandaPupilPath = new SKPath();
-        private SKPath pandaTailPath = new SKPath();
-
-        private SKPath hourHandPath =
-            SKPath.ParseSvgPathData(
-                "M 0 -60 C 0 -30 20 -30 5 -20 L 5 0 C 5 7.5 -5 7.5 -5 0 L -5 -20 C -20 -30 0 -30 0 -60");
-
-        private SKPath minuteHandPath = SKPath.ParseSvgPathData(
-            "M 0 -80 C 0 -75 0 -70 2.5 -60 L 2.5 0 C 2.5 5 -2.5 5 -2.5 0 L -2.5 -60 C 0 -70 0 -75 0 -80");
+        private SKPath pandaMouthPath = new SKPath();
+        private SKPath pandaHeadPath = new SKPath();
+        
         public MainPage()
         {
             InitializeComponent();
             
             // Make panda nose path
-            pandaNosePath.MoveTo(0,0);
-            pandaNosePath.LineTo(0,5);
-            pandaNosePath.LineTo(5,5);
+            pandaNosePath.MoveTo(0,-140);
+            pandaNosePath.LineTo(10,-140);
+            pandaNosePath.LineTo(4,-138);
+            pandaNosePath.LineTo(0,-130);
             pandaNosePath.Close();
-            
-            // Make panda eye path
-            pandaEyePath.MoveTo(0,0);
-            pandaEyePath.ArcTo(50,50,0,SKPathArcSize.Small, SKPathDirection.Clockwise, 50, 0);
-            pandaEyePath.ArcTo(50,50,0,SKPathArcSize.Small, SKPathDirection.Clockwise, 0, 0);
-            pandaEyePath.Close();
-            
-            // Make panda pupil path
-            pandaPupilPath.MoveTo(25,-5);
-            pandaPupilPath.Close();
-            
-            // Make panda tail path
-            pandaTailPath.MoveTo(0,100);
-            pandaTailPath.CubicTo(50,200,0,250,-50,200);
-            
+
+            // Make panda mouth path
+            pandaNosePath.MoveTo(0,-130);
+            pandaNosePath.LineTo(0,-125);
+            pandaNosePath.LineTo(7,-122);
+            pandaNosePath.LineTo(14,-125);
+
             // Create shader
             Assembly assembly = GetType().GetTypeInfo().Assembly;
             using (Stream stream = assembly.GetManifestResourceStream("Skia_training_cross.bamboo_background.jpg"))
@@ -129,81 +116,67 @@ namespace Skia_training_cross
             // Get DateTime
             DateTime dateTime = DateTime.Now;
             
-            // Head 
-            canvas.DrawCircle(0, -160, 78,blackFillPaint);
-            canvas.DrawCircle(0,-160,75,whiteFillPaint);
+            // Draw ears
+            canvas.Save();
+            canvas.DrawCircle(50,-223,26,blackFillPaint);
+            canvas.DrawCircle(-50,-223,26,blackFillPaint);
+            canvas.Restore();
+
+            // Draw legs
+            canvas.DrawOval(40,100, 25, 48,blackFillPaint);
+            canvas.DrawOval(-40,100, 25, 48,blackFillPaint);
             
-            // Draw nose
-            //canvas.Draw(0,-160, blackFillPaint);
+            // Draw arms
+            canvas.Save();
+            canvas.RotateDegrees(30);
+            canvas.DrawOval(52,-70, 60, 28,blackFillPaint);
+            canvas.RotateDegrees(-60);
+            canvas.DrawOval(-52,-70, 60, 28,blackFillPaint);
             
-            // Draw nose, ears and eyes
+            // Draw body
+            canvas.Restore();
+            canvas.DrawOval(0,-10, 90, 100,blackFillPaint);
+            canvas.DrawOval(0,0, 85, 65,whiteFillPaint);
+            
+            // Draw head 
+            canvas.DrawOval(0, -155, 80, 70, blackFillPaint);
+            canvas.DrawOval(0,-155,75,65, whiteFillPaint);
+
+            // Draw nose, mouth, eyes and whiskers
             for (int i = 0; i < 2; i++)
             {
                 canvas.Save();
                 canvas.Scale(2*i - 1,1);
 
-                canvas.Save();
-                canvas.Translate(-65,-255);
+                // Draw nose
                 canvas.DrawPath(pandaNosePath, blackFillPaint);
-                canvas.Restore();
 
-                canvas.Save();
-                canvas.DrawCircle(25, -175, 25, blackFillPaint);
-                canvas.DrawCircle(25,-175, 11,whiteFillPaint);
-                canvas.DrawCircle(25, -175, 7, blackFillPaint);
-                canvas.Restore();
+                // Draw mouth
+                canvas.DrawPath(pandaMouthPath, blackStrokePaint);
                 
+                // Draw eyes
+                canvas.DrawOval(30,-172, 20, 25, blackFillPaint);
+                canvas.DrawCircle(28,-175, 11, whiteFillPaint);
+                canvas.DrawCircle(27, -175, 7, blackFillPaint);
+
                 // Draw whiskers
-                canvas.DrawLine(10,-120,100,-100,whiteStrokePaint);
-                canvas.DrawLine(10,-125,100,-120,whiteStrokePaint);
-                canvas.DrawLine(10,-130,100,-140,whiteStrokePaint);
-                canvas.DrawLine(10,-135,100,-160,whiteStrokePaint);
-                
+                canvas.DrawLine(10,-130,45,-110,blackFillPaint);
+                canvas.DrawLine(10,-135,45,-125,blackFillPaint);
+                canvas.DrawLine(10,-140,45,-135,blackFillPaint);
                 canvas.Restore();
+                
             }
             
-            // Move tail 
+            //------------------------------Animation training
+            
+            // Move head
             float t = (float) Math.Sin((dateTime.Second % 2 + dateTime.Millisecond / 1000.0) * Math.PI);
-            pandaTailPath.Reset();
-            pandaTailPath.MoveTo(0,100);
-            SKPoint point1 = new SKPoint(-50 * t, 200);
-            SKPoint point2 = new SKPoint(0, 250 - Math.Abs(5 * t));
-            SKPoint point3 = new SKPoint(50*t, 250 - Math.Abs(75 * t));
-            pandaTailPath.CubicTo(point1,point2,point3);
+            pandaHeadPath.Reset();
+            pandaHeadPath.MoveTo(0,-120);
+            pandaHeadPath.LineTo(0,-140);
             
-            // Draw tail
-            canvas.DrawPath(pandaTailPath, blackStrokePaint);
-            
-            // Clock background
-            canvas.DrawCircle(0,0,100,whiteFillPaint);
-            
-            // Hour and minute marks
-            for (int angle = 0; angle < 360; angle += 6)
-            {
-                canvas.DrawCircle(0, -90, angle % 30 == 0 ? 4 : 2, blackFillPaint);
-                canvas.RotateDegrees(6);
-            }
-
-            // Hour hand
-            canvas.Save();
-            canvas.RotateDegrees(30 * dateTime.Hour + dateTime.Minute / 2f);
-            canvas.DrawPath(hourHandPath, grayFillPaint);
-            canvas.DrawPath(hourHandPath, whiteStrokePaint);
-            canvas.Restore();
-            
-            // Minute hand
-            canvas.Save();
-            canvas.RotateDegrees(6 * dateTime.Minute + dateTime.Second / 10f);
-            canvas.DrawPath(minuteHandPath, grayFillPaint);
-            canvas.DrawPath(minuteHandPath, whiteStrokePaint);
-            canvas.Restore();
-            
-            // Second hand
-            canvas.Save();
-            float seconds = dateTime.Second + dateTime.Millisecond / 1000f;
-            canvas.RotateDegrees(6 * seconds);
-            canvas.DrawLine(0,10,0,-80,whiteStrokePaint);
-            canvas.Restore();
+            // Draw head
+            canvas.DrawPath(pandaHeadPath,whiteFillPaint);
         }
     }
 }
