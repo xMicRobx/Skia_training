@@ -115,68 +115,70 @@ namespace Skia_training_cross
             
             // Get DateTime
             DateTime dateTime = DateTime.Now;
-            
-            // Draw ears
-            canvas.Save();
-            canvas.DrawCircle(50,-223,26,blackFillPaint);
-            canvas.DrawCircle(-50,-223,26,blackFillPaint);
-            canvas.Restore();
 
-            // Draw legs
-            canvas.DrawOval(40,100, 25, 48,blackFillPaint);
-            canvas.DrawOval(-40,100, 25, 48,blackFillPaint);
-            
             // Draw arms
+            canvas.Restore();
             canvas.Save();
             canvas.RotateDegrees(30);
-            canvas.DrawOval(52,-70, 60, 28,blackFillPaint);
+            canvas.DrawOval(60,-80, 60, 28,blackFillPaint);
             canvas.RotateDegrees(-60);
-            canvas.DrawOval(-52,-70, 60, 28,blackFillPaint);
+            canvas.DrawOval(-60,-80, 60, 28,blackFillPaint);
+            
+            // Draw legs
+            canvas.Restore();
+            canvas.Save();
+            canvas.RotateDegrees(-30);
+            canvas.DrawOval(5,115, 28, 50,blackFillPaint);
+            canvas.RotateDegrees(60);
+            canvas.DrawOval(-5,115, 28, 50,blackFillPaint);
             
             // Draw body
             canvas.Restore();
+            canvas.Save();
             canvas.DrawOval(0,-10, 90, 100,blackFillPaint);
-            canvas.DrawOval(0,0, 85, 65,whiteFillPaint);
+            canvas.DrawOval(0,5, 82, 65,whiteFillPaint);
+            canvas.Restore();
+            
+            // Move head
+            float t = (float) Math.Sin((dateTime.Second % 2 + dateTime.Millisecond / 1000.0) * Math.PI);
+            Console.WriteLine(t);
+            
+            // Draw ears, nose, mouth, eyes and whiskers
+            canvas.Translate(0,t*10);
             
             // Draw head 
-            canvas.DrawOval(0, -155, 80, 70, blackFillPaint);
-            canvas.DrawOval(0,-155,75,65, whiteFillPaint);
+            canvas.DrawOval(0, -150, 80, 70, blackFillPaint);
+            canvas.DrawOval(0,-150,75,65, whiteFillPaint);
 
-            // Draw nose, mouth, eyes and whiskers
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 2 ; i++)
             {
                 canvas.Save();
                 canvas.Scale(2*i - 1,1);
+                        
+                // Draw ears
+                canvas.DrawCircle(50,-218,26,blackFillPaint);
 
                 // Draw nose
                 canvas.DrawPath(pandaNosePath, blackFillPaint);
 
                 // Draw mouth
                 canvas.DrawPath(pandaMouthPath, blackStrokePaint);
-                
+                        
                 // Draw eyes
-                canvas.DrawOval(30,-172, 20, 25, blackFillPaint);
-                canvas.DrawCircle(28,-175, 11, whiteFillPaint);
-                canvas.DrawCircle(27, -175, 7, blackFillPaint);
+                canvas.DrawOval(30,-167, 20, 25, blackFillPaint);
+                canvas.DrawCircle(28,-170, 11, whiteFillPaint);
+                canvas.DrawCircle(27, -170, 7, blackFillPaint);
 
                 // Draw whiskers
-                canvas.DrawLine(10,-130,45,-110,blackFillPaint);
-                canvas.DrawLine(10,-135,45,-125,blackFillPaint);
-                canvas.DrawLine(10,-140,45,-135,blackFillPaint);
+                canvas.DrawLine(10,-125,45,-105,blackFillPaint);
+                canvas.DrawLine(10,-130,45,-120,blackFillPaint);
+                canvas.DrawLine(10,-135,45,-130,blackFillPaint);
                 canvas.Restore();
-                
             }
-            
-            //------------------------------Animation training
-            
-            // Move head
-            float t = (float) Math.Sin((dateTime.Second % 2 + dateTime.Millisecond / 1000.0) * Math.PI);
-            pandaHeadPath.Reset();
-            pandaHeadPath.MoveTo(0,-120);
-            pandaHeadPath.LineTo(0,-140);
-            
-            // Draw head
-            canvas.DrawPath(pandaHeadPath,whiteFillPaint);
+            canvas.Restore();
         }
+            //------------------------------Animation training
+            // Draw head
+            //canvas.DrawPath(pandaHeadPath,whiteFillPaint);
     }
 }
