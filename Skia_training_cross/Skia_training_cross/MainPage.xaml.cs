@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,10 @@ namespace Skia_training_cross
         public MainPage()
         {
             InitializeComponent();
+            Tickets = GetTickets();
+            this.BindingContext = this;
             
-            // Make panda nose path
+            /*// Make panda nose path
             pandaNosePath.MoveTo(0,-140);
             pandaNosePath.LineTo(10,-140);
             pandaNosePath.LineTo(4,-138);
@@ -96,15 +99,44 @@ namespace Skia_training_cross
             {
                 canvasView.InvalidateSurface();
                 return true;
-            });
+            });*/
         }
 
+        public ObservableCollection<Choice> Tickets { get; set; }
+        public Choice SelectedTicket { get; set; }
+
+        private ObservableCollection<Choice> GetTickets()
+        {
+            return new ObservableCollection<Choice>
+            {
+                new Choice()
+                {
+                    OptionName = "Home", Image = "BadBoys.png", ShowingDate = DateTime.Now.AddDays(15),
+                    Seats = new int[] {61, 62, 63}
+                },
+                new Choice()
+                {
+                    OptionName = "Auto", Image = "OldGuard.png", ShowingDate = DateTime.Now.AddDays(22),
+                    Seats = new int[] {111, 112}
+                },
+                new Choice()
+                {
+                    OptionName = "Settings", Image = "Tenet.png", ShowingDate = DateTime.Now.AddDays(25),
+                    Seats = new int[] {12, 25, 35}
+                },
+                new Choice()
+                {
+                    OptionName = "Contact", Image = "TimeToDie.png", ShowingDate = DateTime.Now.AddDays(20),
+                    Seats = new int[] {99}
+                },
+            };
+        }
         private void canvasView_PaintSurface(object sender, SKPaintSurfaceEventArgs e)
         {
             SKSurface surface = e.Surface;
             SKCanvas canvas = surface.Canvas;
             
-            canvas.DrawPaint(backgroundFillPaint);
+            /*canvas.DrawPaint(backgroundFillPaint);
 
             int width = e.Info.Width;
             int height = e.Info.Height;
@@ -175,10 +207,22 @@ namespace Skia_training_cross
                 canvas.DrawLine(10,-135,45,-130,blackFillPaint);
                 canvas.Restore();
             }
-            canvas.Restore();
+            canvas.Restore();*/
         }
-            //------------------------------Animation training
-            // Draw head
-            //canvas.DrawPath(pandaHeadPath,whiteFillPaint);
+
+        private void TicketSelected(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.CurrentSelection != null)
+            {
+                this.Navigation.PushAsync(new SeatsPage(SelectedTicket));
+            }
+        }
+    }
+    public  class Choice
+    {
+        public string OptionName { get; set; }
+        public DateTime ShowingDate { get; set; }
+        public string Image { get; set; }
+        public int[] Seats { get; set; }
     }
 }

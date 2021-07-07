@@ -22,3 +22,4 @@ C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_trai
 C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_training_cross\bin\Debug\netstandard2.0\Skia_training_cross.dll
 C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_training_cross\bin\Debug\netstandard2.0\Skia_training_cross.pdb
 C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_training_cross\obj\Debug\netstandard2.0\OptionsPage.xaml.g.cs

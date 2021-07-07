@@ -11,8 +11,8 @@ namespace Skia_training_cross
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            Device.SetFlags(new []{"Shapes_Experimental"});
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

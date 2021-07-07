@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Ignorable="d" NavigationPage.HasNavigationBar="False"
+             BackgroundColor="White"
+             x:Class="Skia_training_cross.SeatsPage">
+    
+    <Grid RowDefinitions="Auto, Auto, *" Padding="30" RowSpacing="30" >
+        <StackLayout Orientation="Horizontal" Margin="0,20" VerticalOptions="Start" Spacing="20">
+            <Image Source="{Binding SelectedTicket.Image}" Aspect="AspectFill" WidthRequest="70" HeightRequest="90"
+                   HorizontalOptions="Start"></Image>
+            <StackLayout>
+                <Label Text="{Binding SelectedTicket.MovieTitle}" TextColor="Black" FontSize="20"></Label>
+                <StackLayout Orientation="Horizontal" Spacing="15">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="calendar.png" HeightRequest="15" WidthRequest="15"></Image>
+                        <Label Text="{Binding SelectedTicket.ShowingDate, StringFormat='{0:dd.MM.yyyy}'}"
+                               TextColor="#8989CB" FontSize="12" VerticalOptions="Center"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="time.png" HeightRequest="15" WidthRequest="15"></Image>
+                        <Label Text="{Binding SelectedTicket.ShowingDate, StringFormat='{0:h:mm tt}'}"
+                               TextColor="#8989CB" FontSize="12" VerticalOptions="Center"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <BoxView BackgroundColor="White" Opacity="0.2" HeightRequest="1" VerticalOptions="End"></BoxView>
+        <StackLayout HorizontalOptions="FillAndExpand" Grid.Row="1" Spacing="30">
+            <Path Stroke="#00b7fc" Aspect="Fill" StrokeThickness="5" HeightRequest="30"
+                Data ="m 22.48,120 c 23.13111,-12.84569 58.906322,-20 79.99957,-20 22.83623,0 58.45043,7.50073 80.00043,20"> </Path>
+        </StackLayout>
+    </Grid>
+</ContentPage>
