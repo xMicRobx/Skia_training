@@ -8,21 +8,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Skia_training_cross.OptionsPage.xaml", "OptionsPage.xaml", typeof(global::Skia_training_cross.SeatsPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Skia_training_cross.OptionsPage.xaml", "OptionsPage.xaml", typeof(global::Skia_training_cross.OptionsPage))]
 
 namespace Skia_training_cross {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("OptionsPage.xaml")]
-    public partial class SeatsPage : global::Xamarin.Forms.ContentPage {
+    public partial class OptionsPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::SkiaSharp.Views.Forms.SKCanvasView CanvasView;
+        private global::SkiaSharp.Views.Forms.SKCanvasView canvasView;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(SeatsPage));
-            CanvasView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::SkiaSharp.Views.Forms.SKCanvasView>(this, "CanvasView");
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(OptionsPage));
+            canvasView = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::SkiaSharp.Views.Forms.SKCanvasView>(this, "canvasView");
         }
     }
 }

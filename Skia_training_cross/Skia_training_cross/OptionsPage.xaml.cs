@@ -1,45 +1,46 @@
-﻿using System;
+﻿using SkiaSharp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SkiaSharp;
-using SkiaSharp.Views.Forms;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Xamarin.Forms.Shapes;
 
 namespace Skia_training_cross
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SeatsPage : ContentPage
+    public partial class OptionsPage : ContentPage
     {
-        public SeatsPage(Choice choice)
+        public OptionsPage(Ticket ticket)
         {
             InitializeComponent();
-            SelectedChoice = choice;
+            SelectedTicket = ticket;
             Init();
             this.BindingContext = this;
         }
-        public Choice SelectedChoice { get; set; }
-        private Dictionary<int, int> data = new Dictionary<int, int>();
-        private SKPaint availablePaint = new SKPaint() { Style = SKPaintStyle.Stroke, Color = SKColor.Parse("#343352") };
-        
-        private SKPaint reservedPaint = new SKPaint() { Style = SKPaintStyle.StrokeAndFill, Color = SKColor.Parse("#343352") };
-        
-        private SKPaint yourSeatPaint = new SKPaint() { Style = SKPaintStyle.StrokeAndFill, Color = SKColor.Parse("#9747FF") };
-        
-        private SKPaint textPaint = new SKPaint() { TextSize = 40, Color = SKColor.Parse("#343352") };
+
+        public Ticket SelectedTicket { get; set; }
+        Dictionary<int, int> data = new Dictionary<int, int>();
+        SKPaint availablePaint = new SKPaint() { Style = SKPaintStyle.Stroke, Color = SKColor.Parse("#343352") };
+
+        SKPaint reservedPaint = new SKPaint() { Style = SKPaintStyle.StrokeAndFill, Color = SKColor.Parse("#343352") };
+
+        SKPaint yourSeatPaint = new SKPaint() { Style = SKPaintStyle.StrokeAndFill, Color = SKColor.Parse("#4c6fed") };
+
+        SKPaint textPaint = new SKPaint() { TextSize = 40, Color = SKColor.Parse("#343352") };
 
         private void Init()
         {
             var rand = new Random();
             for (int i = 0; i < 120; i++)
             {
-                data.Add(i, rand.Next(0,2));
+                data.Add(i, rand.Next(0, 2));
             }
         }
-        private void SKCanvasView_OnPaintSurface(object sender, SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs e)
+
+        private void SKCanvasView_PaintSurface(object sender, SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs e)
         {
             var canvas = e.Surface.Canvas;
             var x = 60;
@@ -54,7 +55,7 @@ namespace Skia_training_cross
 
             for (int i = 0; i < data.Count; i++)
             {
-                if (items == 0)
+                if(items == 0)
                 {
                     row += 1;
                     items = GetColumn(row);
@@ -69,22 +70,23 @@ namespace Skia_training_cross
                 }
 
                 var seatColorIndex = data[i];
-                
-                if (SelectedChoice.Seats.Any(z => z == i))
+
+                if (SelectedTicket.Seats.Any(z => z == i))
                     seatColorIndex = 2;
-                
-                canvas.DrawRoundRect(new SKRoundRect(new SKRect(x,y,x + itemHeight,y + itemWidth), cornerRadius),GetColor(seatColorIndex));
+
+                canvas.DrawRoundRect(new SKRoundRect(new SKRect(x, y, x + itemHeight, y + itemWidth), cornerRadius), GetColor(seatColorIndex));
 
                 items -= 1;
 
                 if (items == 0)
                 {
-                    canvas.DrawText($"{row + 1}", 0, y + margin + (itemHeight/2), textPaint);
+                    canvas.DrawText($"{row + 1}", 0, y + margin + (itemHeight / 2), textPaint);
                 }
             }
         }
 
-        private SKPaint GetColor(int seatColor)
+
+        SKPaint GetColor(int seatColor)
         {
             switch (seatColor)
             {
@@ -107,7 +109,7 @@ namespace Skia_training_cross
                 case 1:
                 case 9:
                     return 10;
-                case 2: 
+                case 2:
                 case 3:
                 case 8:
                     return 12;
