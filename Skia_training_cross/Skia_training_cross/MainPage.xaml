@@ -3,32 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Shapes="clr-namespace:Xamarin.Forms.Shapes;assembly=Xamarin.Forms.Core"
+             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              mc:Ignorable="d" BackgroundColor="White"
              NavigationPage.HasNavigationBar="False"
              x:Class="Skia_training_cross.MainPage">
 
     <Grid RowDefinitions="Auto, *" Padding="30" RowSpacing="40">
-        <Label Text="Nsure" TextColor="#00B7FC" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
-        <StackLayout Grid.Row="1" Spacing="15">
-            <Label Text="Your options" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
-            <CollectionView SelectionMode="Single" ItemsSource="{Binding Tickets}" 
-                            SelectedItem="{Binding SelectedTicket}" SelectionChanged="TicketSelected">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2" VerticalItemSpacing="20" HorizontalItemSpacing="20"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.EmptyView>
-                    <Label Text="No ticket found." TextColor="Black" HorizontalOptions="Center" VerticalOptions="Center"/>
-                </CollectionView.EmptyView>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Spacing="10">
-                            <Image Source="C:\Users\TrainingP7\Documents\GitHub\Skia_training\Skia_training_cross\Skia_training_cross.Android\Resources\drawable" Aspect="AspectFill" HeightRequest="235" 
-                                   HorizontalOptions="FillAndExpand"/>
-                            <Label Text="{Binding MovieTitle}" TextColor="RoyalBlue" FontSize="14"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+        <Label Text="Nsure" TextColor="#4daef7" FontSize="40" FontAttributes="Bold" HorizontalOptions="Center" />
+        <StackLayout Grid.Row="1" Spacing="30">
+            <Label Text="Choose your best quote" TextColor="Black" FontSize="20" FontAttributes="Bold"/>
+            <StackLayout Grid.Row="2" Spacing="30">
+                <Label
+                    Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut"
+                    TextColor="Gray" FontSize="17">
+                </Label>
+                <forms:SKCanvasView PaintSurface="canvasView_PaintSurface"/>
+                <!--<StackLayout HorizontalOptions="FillAndExpand" Grid.Row="2" Spacing="30">
+                    <Shapes:Rectangle Fill="#4daef7" HeightRequest="165" WidthRequest="235" HorizontalOptions="Center"/>
+                </StackLayout>-->
+                
+            </StackLayout>
         </StackLayout>
     </Grid>
 </ContentPage>

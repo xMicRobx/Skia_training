@@ -5,50 +5,54 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SkiaSharp.Views.Forms;
+using SkiaSharp;
 using Xamarin.Forms;
+
 
 namespace Skia_training_cross
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
-    [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        private SKPaint blueFillPaint = new SKPaint()
+        {
+            Style = SKPaintStyle.Fill,
+            Color = SKColor.Parse("#4daef7")
+        };
         public MainPage()
         {
             InitializeComponent();
-            Tickets = GetTickets();
-            this.BindingContext = this;
+            /*this.BindingContext = this;*/
         }
-
-        public ObservableCollection<Ticket> Tickets { get; set; }
-        public Ticket SelectedTicket { get; set; }
-
-        private ObservableCollection<Ticket> GetTickets()
+        
+        private void canvasView_PaintSurface(object sender, SKPaintSurfaceEventArgs e)
         {
-            return new ObservableCollection<Ticket>
-            {
-                new Ticket { MovieTitle = "Home", Image = "BadBoys.png", ShowingDate = DateTime.Now.AddDays(15), Seats = new int[] { 61, 62, 63 } },
-                new Ticket { MovieTitle = "Auto", Image = "OldGuard.png", ShowingDate = DateTime.Now.AddDays(22), Seats = new int[] { 111, 112 } },
-                new Ticket { MovieTitle = "Settings", Image = "Tenet.png", ShowingDate = DateTime.Now.AddDays(25), Seats = new int[] { 12, 25, 35 } },
-                new Ticket { MovieTitle = "About", Image = "TimeToDie.png", ShowingDate = DateTime.Now.AddDays(20), Seats = new int[] { 99 } }
-            };
-        }
+            SKSurface surface = e.Surface;
+            SKCanvas canvas = surface.Canvas;
+            
+            canvas.Clear(SKColors.White);
 
-        private void TicketSelected(object sender, SelectionChangedEventArgs e)
+            int width = e.Info.Width;
+            int height = e.Info.Height;
+            
+            //Set transforms
+            canvas.Translate(width / 2, height / 2);
+
+            canvas.DrawRect(0,0,100,100,blueFillPaint);
+        }
+        
+        public class ItemPO
         {
-            if (e.CurrentSelection != null)
-            {
-                this.Navigation.PushAsync(new OptionsPage(SelectedTicket));
-            }
+            public string Title { get; set; }
+            public string Description { get; set; }
         }
-    }
 
-    public class Ticket
-    {
-        public string MovieTitle { get; set; }
-        public DateTime ShowingDate { get; set; }
-        public string Image { get; set; }
-        public int[] Seats { get; set; }
+        private void SKCanvasView_PaintSurface(object sender, SkiaSharp.Views.Forms.SKPaintSurfaceEventArgs e)
+        {
+           
+        }
+
     }
 }
