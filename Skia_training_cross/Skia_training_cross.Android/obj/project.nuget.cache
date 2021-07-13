@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "qbTqL2z8HJY3BZk9V4dWeHz8MHsz6b7c6iVeyNw3qWY4KIKbS22I0zpuFhu6PVUV0b1r23yMTjKSW2Nh0tZ+iA==",
+  "dgSpecHash": "t9UZXtxX0IKiohg5om1Rr8VvGPf7fd5xwuSyjfwpY88y8fgLmylBiIw3SmiTXqYjvxqnUXnYo5d9EbaVTdV1Sw==",
   "success": true,
   "projectFilePath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross.Android\\Skia_training_cross.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp\\2.80.3-preview.93\\skiasharp.2.80.3-preview.93.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp.views\\2.80.3-preview.93\\skiasharp.views.2.80.3-preview.93.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\skiasharp.views.forms\\2.80.3-preview.93\\skiasharp.views.forms.2.80.3-preview.93.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\touchtracking\\1.1.0\\touchtracking.1.1.0.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\touchtracking.forms\\1.1.0\\touchtracking.forms.1.1.0.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\xamarin.androidx.activity\\1.1.0.5\\xamarin.androidx.activity.1.1.0.5.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\xamarin.androidx.annotation\\1.1.0.8\\xamarin.androidx.annotation.1.1.0.8.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\xamarin.androidx.annotation.experimental\\1.0.0.8\\xamarin.androidx.annotation.experimental.1.0.0.8.nupkg.sha512",

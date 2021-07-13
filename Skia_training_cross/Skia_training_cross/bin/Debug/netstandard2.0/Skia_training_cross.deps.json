@@ -13,6 +13,7 @@
           "SkiaSharp": "2.80.3-preview.93",
           "SkiaSharp.Views": "2.80.3-preview.93",
           "SkiaSharp.Views.Forms": "2.80.3-preview.93",
+          "TouchTracking.Forms": "1.1.0",
           "Xamarin.Forms": "5.0.0.2012"
         },
         "runtime": {
@@ -84,6 +85,26 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "4.0.4.1",
             "fileVersion": "4.6.26919.2"
+          }
+        }
+      },
+      "TouchTracking/1.1.0": {
+        "runtime": {
+          "lib/netstandard1.3/TouchTracking.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "TouchTracking.Forms/1.1.0": {
+        "dependencies": {
+          "TouchTracking": "1.1.0",
+          "Xamarin.Forms": "5.0.0.2012"
+        },
+        "runtime": {
+          "lib/netstandard1.3/TouchTracking.Forms.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -173,6 +194,20 @@
       "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
       "path": "system.runtime.compilerservices.unsafe/4.5.2",
       "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    },
+    "TouchTracking/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZuhJdQBAOXlDGfxmFBWUlaL3GpUBtUd5c6KDMaW10fhIqDtWse9mvBZ/5uJ1oElm15QRunpTihj6GjdtN5+Y/g==",
+      "path": "touchtracking/1.1.0",
+      "hashPath": "touchtracking.1.1.0.nupkg.sha512"
+    },
+    "TouchTracking.Forms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rEIFSJM0kl9T6Vn1LvY6jaZ4ulbk3MSbWVtH66/A9YSqf5aAfEEct3uWu+Ivt0zuKQrI/9Ryedcve1TqgDMqlQ==",
+      "path": "touchtracking.forms/1.1.0",
+      "hashPath": "touchtracking.forms.1.1.0.nupkg.sha512"
     },
     "Xamarin.Forms/5.0.0.2012": {
       "type": "package",

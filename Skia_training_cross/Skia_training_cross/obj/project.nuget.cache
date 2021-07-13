@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hai5VMqFuuh87yyqb2M2v0SV13AzpoK/yxus1VpJVj/OicsMedsP7L+3SUYTGo+SUUz4N1TClpdOH2Dvbq1Rew==",
+  "dgSpecHash": "IXgRkm+4nGgux9tccYyWiO5abdH5Fp/NbDpA3PThLua6FESNp0l6fkgWR3A3sSqonyW7PHsd74wB6TzAe4u9xw==",
   "success": true,
   "projectFilePath": "C:\\Users\\TrainingP7\\Documents\\GitHub\\Skia_training\\Skia_training_cross\\Skia_training_cross\\Skia_training_cross.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,8 @@
     "C:\\Users\\TrainingP7\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\touchtracking\\1.1.0\\touchtracking.1.1.0.nupkg.sha512",
+    "C:\\Users\\TrainingP7\\.nuget\\packages\\touchtracking.forms\\1.1.0\\touchtracking.forms.1.1.0.nupkg.sha512",
     "C:\\Users\\TrainingP7\\.nuget\\packages\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512"
   ],
   "logs": [

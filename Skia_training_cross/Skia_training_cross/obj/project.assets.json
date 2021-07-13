@@ -116,6 +116,28 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "TouchTracking/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.3/TouchTracking.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/TouchTracking.dll": {}
+        }
+      },
+      "TouchTracking.Forms/1.1.0": {
+        "type": "package",
+        "dependencies": {
+          "TouchTracking": "1.1.0",
+          "Xamarin.Forms": "3.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/TouchTracking.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/TouchTracking.Forms.dll": {}
+        }
+      },
       "Xamarin.Forms/5.0.0.2012": {
         "type": "package",
         "compile": {
@@ -549,6 +571,42 @@
         "version.txt"
       ]
     },
+    "TouchTracking/1.1.0": {
+      "sha512": "ZuhJdQBAOXlDGfxmFBWUlaL3GpUBtUd5c6KDMaW10fhIqDtWse9mvBZ/5uJ1oElm15QRunpTihj6GjdtN5+Y/g==",
+      "type": "package",
+      "path": "touchtracking/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/TouchTracking.Droid.dll",
+        "lib/MonoAndroid/TouchTracking.dll",
+        "lib/XamariniOS/TouchTracking.dll",
+        "lib/XamariniOS/TouchTracking.iOS.dll",
+        "lib/netstandard1.3/TouchTracking.dll",
+        "lib/uap10.0/TouchTracking.UWP.dll",
+        "lib/uap10.0/TouchTracking.dll",
+        "touchtracking.1.1.0.nupkg.sha512",
+        "touchtracking.nuspec"
+      ]
+    },
+    "TouchTracking.Forms/1.1.0": {
+      "sha512": "rEIFSJM0kl9T6Vn1LvY6jaZ4ulbk3MSbWVtH66/A9YSqf5aAfEEct3uWu+Ivt0zuKQrI/9Ryedcve1TqgDMqlQ==",
+      "type": "package",
+      "path": "touchtracking.forms/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/TouchTracking.Forms.Droid.dll",
+        "lib/MonoAndroid/TouchTracking.Forms.dll",
+        "lib/XamariniOS/TouchTracking.Forms.dll",
+        "lib/XamariniOS/TouchTracking.Forms.iOS.dll",
+        "lib/netstandard1.3/TouchTracking.Forms.dll",
+        "lib/uap10.0/TouchTracking.Forms.UWP.dll",
+        "lib/uap10.0/TouchTracking.Forms.dll",
+        "touchtracking.forms.1.1.0.nupkg.sha512",
+        "touchtracking.forms.nuspec"
+      ]
+    },
     "Xamarin.Forms/5.0.0.2012": {
       "sha512": "Rqc6xvWR/sf+Db5+qRCFmuYTWVp04QWRfwPto2/JHbShSy4Ed53Q2jpoFzsoloXkJA6saD236PlaWAhT6vI4gw==",
       "type": "package",
@@ -772,6 +830,7 @@
       "SkiaSharp >= 2.80.3-preview.93",
       "SkiaSharp.Views >= 2.80.3-preview.93",
       "SkiaSharp.Views.Forms >= 2.80.3-preview.93",
+      "TouchTracking.Forms >= 1.1.0",
       "Xamarin.Forms >= 5.0.0.2012"
     ]
   },
@@ -829,6 +888,10 @@
           "SkiaSharp.Views.Forms": {
             "target": "Package",
             "version": "[2.80.3-preview.93, )"
+          },
+          "TouchTracking.Forms": {
+            "target": "Package",
+            "version": "[1.1.0, )"
           },
           "Xamarin.Forms": {
             "target": "Package",
